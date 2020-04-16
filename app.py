@@ -14,14 +14,14 @@ app = Flask(__name__)
 cors = CORS(app,resource={r"/*":{"origens":"*"}})
 
 
-@app.route('/<id>', methods=['GET'])
-def index(id):
+@app.route("/", methods=['GET'])
+def index():
   barra = codigodebarra()
   if len(sys.argv) > 1:
     codigo = sys.argv[1]
   else:
     # codigo de barra completo em dígitos
-    codigo = id
+    codigo = "123123"
   # formato que deseja salvar a imagem (PNG,GIF)
   tipo='PNG'
 
